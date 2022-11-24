@@ -1,7 +1,17 @@
 import  express  from "express";
 const app = express();
 const puerto = 3000;
-function callback (){
+
+app.listen(puerto, ()=>{
     console.log("El servidor se esta ejecutando. ");
-}
-app.listen(puerto, callback)
+})
+
+app.get("/", (req,rest)=>{
+    rest.send("Hola, mundo")
+
+})
+
+app.get("/home", (req,rest)=>{
+    rest.send("Estas en el Home")
+
+})
